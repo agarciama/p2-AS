@@ -1,0 +1,36 @@
+<h1>Listado de Artículos</h1>
+
+<table border="1">
+    <h2>Todos los articulos</h2>
+<tr>
+    <th>ID</th>
+    <th>Artículo</th>
+</tr>
+{% for articulo in articulos %}
+    <tr>
+        <td>{{ articulo.id }}</td>
+        <td><a href="{{ path('listar_articulos', {'id': articulo.id}) }}">{{ articulo.title }}</a></td>
+    </tr>
+{% endfor %}
+</table>
+
+
+<table border="1">
+    <h2>Articulos Seleccionado</h2>
+<tr>
+    <th>ID</th>
+    <th>Artículo</th>
+    <th>Modelo</th>
+    <th>Precio</th>
+</tr>
+{% for articulo in articulos %}
+    {% if articulo.id == id_deseado %}
+    <tr>
+        <td>{{ articulo.id }}</td>
+        <td>{{ articulo.title }}</td>
+        <td>{{ articulo.nombre_producto }}</td>
+        <td>{{ articulo.precio }}</td>
+    </tr>
+    {% endif %}
+{% endfor %}
+</table>

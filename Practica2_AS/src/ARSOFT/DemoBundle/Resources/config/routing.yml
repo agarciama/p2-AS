@@ -1,0 +1,7 @@
+    
+listar_articulos:
+    path: /articulos/{id}
+    defaults: { _controller: ARSOFTDemoBundle:Listar:listar,id:2}
+
+
+
